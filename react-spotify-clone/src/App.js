@@ -36,9 +36,16 @@ function App() {
         })
       });
 
+      spotify.getUserPlaylists().then((playlists)=>{
+        dispatch({
+          type:"SET_PLAYLISTS",
+          playlists
+        })
+      })
+
     }
     
-  },[]);
+  },[token,dispatch]);
 
   return (
     <div className="app">
